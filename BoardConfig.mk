@@ -57,7 +57,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_SIMULATOR := false
 
-BOARD_CUSTOM_BOOTIMG_MK := device/lge/falcon_umts/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/motorola/falcon_umts/mkbootimg.mk
 
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/motorola/falcon_umts
