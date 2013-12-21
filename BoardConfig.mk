@@ -60,7 +60,7 @@ TARGET_SIMULATOR := false
 BOARD_CUSTOM_BOOTIMG_MK := device/motorola/falcon_umts/mkbootimg.mk
 
 # Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/motorola/falcon_umts
+TARGET_KERNEL_SOURCE := kernel/motorola/msm8226
 TARGET_KERNEL_CONFIG := msm8226_mmi_defconfig
 
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags androidboot.write_protect=0 zcache androidboot.selinux=permissive
