@@ -17,6 +17,7 @@ bin/qmiproxy
 bin/qmuxd
 bin/rild
 bin/rmt_storage
+bin/thernal-engine
 
 # HAL
 lib/hw/camera.msm8226.so
