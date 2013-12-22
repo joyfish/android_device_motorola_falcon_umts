@@ -58,8 +58,7 @@ PRODUCT_PACKAGES += \
 
 # Symlinks
 PRODUCT_PACKAGES += \
-	libxml2 \
-	WCNSS_qcom_wlan_nv.bin
+	libxml2
 
 # Thermal profiles
 PRODUCT_PACKAGES += \
@@ -80,7 +79,18 @@ PRODUCT_PACKAGES += \
 	aplay \
 	amix \
 	arec \
-	alsaucm_test
+	alsaucm_test \
+	libaudioparameter \
+	libqcomvisualizer \
+	libqcomvoiceprocessing \
+	libqcompostprocbundle
+
+# FM radio
+PRODUCT_PACKAGES += \
+	qcom.fmradio \
+	libqcomfm_jni \
+	FM2 \
+	FMRecord
 
 # Omx
 PRODUCT_PACKAGES += \
@@ -108,6 +118,7 @@ PRODUCT_PACKAGES += \
 
 # Apps
 PRODUCT_PACKAGES += \
+	Focal \
 	Gallery \
 	Stk 
 
@@ -220,6 +231,7 @@ PRODUCT_COPY_FILES += \
 # Audio configuration
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf \
+	$(LOCAL_PATH)/config/mixer_paths.xml:system/etc/mixer_paths.xml \
 	$(LOCAL_PATH)/config/snd_soc_msm_Tapan:system/etc/snd_soc_msm/snd_soc_msm_Tapan \
 	$(LOCAL_PATH)/config/snd_soc_msm_Tapan9302:system/etc/snd_soc_msm/snd_soc_msm_Tapan9302 \
 	$(LOCAL_PATH)/config/snd_soc_msm_Tapan_SKUF:system/etc/snd_soc_msm/snd_soc_msm_Tapan_SKUF
@@ -231,8 +243,10 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_COPY_FILES += \
-	kernel/motorola/msm8226/drivers/net/wireless/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-	kernel/motorola/msm8226/drivers/net/wireless/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
+	kernel/motorola/falcon_umts/drivers/net/wireless/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+	kernel/motorola/falcon_umts/drivers/net/wireless/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+	$(LOCAL_PATH)/prebuilts/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+	$(LOCAL_PATH)/prebuilts/etc/firmware/wlan/prima/WCNSS_qcom_wlan_factory_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_factory_nv.bin
 
 # WiFi Config
 PRODUCT_COPY_FILES += \
@@ -258,14 +272,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.purgeable_assets=1 \
 	ro.telephony.call_ring.delay=3000 \
 	persist.webview.provider=classic
-
-# Telephony
-PRODUCT_PROPERTY_OVERRIDES += \
-	telephony.lteOnCdmaDevice=0 \
-	ro.telephony.default_network=3 \
-	persist.radio.no_wait_for_card=1 \
-	persist.radio.call_type=1 \
-	persist.radio.apm_sim_not_pwdn=1 \
-	persist.radio.dfr_mode_set=1
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0

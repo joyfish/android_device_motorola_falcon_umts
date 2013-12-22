@@ -37,7 +37,7 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
-TARGET_CPU_VARIANT := cortex-a7
+TARGET_CPU_VARIANT := krait
 ARCH_ARM_HAVE_ARMV7A := true
 ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HAVE_VFP := true
@@ -57,17 +57,13 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_SIMULATOR := false
 
-BOARD_CUSTOM_BOOTIMG_MK := device/motorola/falcon_umts/mkbootimg.mk
-
 # Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/motorola/msm8226
+TARGET_KERNEL_SOURCE := kernel/motorola/falcon_umts
 TARGET_KERNEL_CONFIG := msm8226_mmi_defconfig
-
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags androidboot.write_protect=0 zcache androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --dt $(LOCAL_PATH)/dt.img
 
 # Wifi related defines
 BOARD_HAS_QCOM_WLAN := true
@@ -93,6 +89,7 @@ BOARD_USES_SEPERATED_AUDIO_INPUT := true
 BOARD_USES_SEPERATED_VOICE_SPEAKER := true
 TARGET_QCOM_AUDIO_VARIANT := caf
 TARGET_USES_QCOM_COMPRESSED_AUDIO := true
+BOARD_HAVE_LOW_LATENCY_AUDIO := true
 AUDIO_FEATURE_DISABLED_FM := true
 AUDIO_FEATURE_DISABLED_SSR := true
 
@@ -118,6 +115,14 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/config/
 BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
+
+# Thermal
+BOARD_USES_EXTRA_THERMAL_SENSOR := true
+
+# GPS
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
+TARGET_NO_RPC := true
+TARGET_PROVIDES_GPS_LOC_API := true
 
 # OpenGL drivers config file path
 BOARD_EGL_CFG := $(LOCAL_PATH)/config/egl.cfg

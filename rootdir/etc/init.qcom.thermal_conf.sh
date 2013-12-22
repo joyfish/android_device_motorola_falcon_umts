@@ -105,6 +105,10 @@ if [ ! -h $THERMAL_ENGINE_CONF_SYMLINK ]; then
      ln -s /etc/thermal-engine-8930.conf $THERMAL_ENGINE_CONF_SYMLINK 2>/dev/null
      ;;
 
+     "158") #MSM8226
+     ln -s /etc/thermal-engine-8226.conf $THERMAL_ENGINE_CONF_SYMLINK 2>/dev/null
+     ;;
+
      *) #MSM8960, etc
      ln -s /etc/thermal-engine-8960.conf $THERMAL_ENGINE_CONF_SYMLINK 2>/dev/null
      ;;
