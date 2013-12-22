@@ -15,11 +15,11 @@ Not Working-
 Ril
 Gallery(Looks for removable storage)
 Camera
+Video
 Wifi
 Bluetooth
 
 
 Not Tested-
-Video(same as gallery app)
 ScreenShot(same as gallery app)
 Audio Recorder(same as gallery app)
