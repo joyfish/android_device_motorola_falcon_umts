@@ -2,18 +2,24 @@ Device configuration for the Motorola G (falcon_umts)
 ===============================
 This is work in progress, please don't expect it to work.
 
-
-Working
+Working-
 It Boots!! :P
-ART Works
-ADB
-
-Not Working 
 Audio
+File Manager
+Accelerometer
+GPS
+All Sensors
+
+
+Not Working-
 Ril
-Wifi
-Gallery
-Bluetooth
+Gallery(Looks for removable storage)
 Camera
-Screenshot
-everything else...
+Wifi
+Bluetooth
+
+
+Not Tested-
+Video(same as gallery app)
+ScreenShot(same as gallery app)
+Audio Recorder(same as gallery app)
