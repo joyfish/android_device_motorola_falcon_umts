@@ -78,8 +78,8 @@ BOARD_WLAN_DEVICE := qcwcn
 
 # Wifi Modules
  WLAN_MODULES:
-	mkdir -p $(KERNEL_MODULES_OUT)/pronto
-	mv $(KERNEL_MODULES_OUT)/wlan.ko $(KERNEL_MODULES_OUT)/pronto/pronto_wlan.ko
+	mkdir -p $(KERNEL_MODULES_OUT)/prima
+	mv $(KERNEL_MODULES_OUT)/wlan.ko $(KERNEL_MODULES_OUT)/pronto/prima_wlan.ko
 	ln -sf /system/lib/modules/prima/prima_wlan.ko $(TARGET_OUT)/lib/modules/wlan.ko
  
  TARGET_KERNEL_MODULES += WLAN_MODULES
