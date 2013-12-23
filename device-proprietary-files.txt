@@ -101,7 +101,7 @@ etc/sap.conf
 vendor/lib/libqmiservices.so
 vendor/lib/libril-qc-qmi-1.so
 
-# WiFi modules
+# WiFi firmware
 etc/firmware/wlan/prima/WCNSS_cfg.dat
 etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 etc/firmware/wlan/prima/WCNSS_qcom_wlan_factory_nv.bin
